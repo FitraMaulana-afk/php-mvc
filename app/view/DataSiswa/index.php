@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 " style="min-height: 100vh;">
     <div class="row">
         <div class="col-6">
 

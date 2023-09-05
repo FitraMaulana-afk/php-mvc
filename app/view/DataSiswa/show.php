@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5" style="min-height: 100vh;">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title"><?= $data['siswa']['nama']; ?></h5>

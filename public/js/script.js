@@ -30,3 +30,36 @@ $(function () {
     })
   })
 })
+
+$(function () {
+  $('.tombolTambahDataGuru').on('click', function () {
+    console.log('click')
+    $('#judulModal').html('Tambah Data Guru')
+    $('.modal-footer button[type=submit]').html('Tambah Data')
+    $('#nama').val('')
+    $('#kode_guru').val('')
+    $('#mapel').val('')
+    $('#id').val('')
+  })
+
+  $('.tampilModalUbahGuru').on('click', function () {
+    console.log('click')
+    $('#judulModal').html('Ubah Data Guru')
+    $('.modal-footer button[type=submit]').html('Ubah Data')
+    $('.modal-body form').attr('action', 'http://php-mvc.test/dataguru/edit')
+    const id = $(this).data('id')
+    $.ajax({
+      url: 'http://php-mvc.test/dataguru/getedit',
+      data: { id: id },
+      method: 'post',
+      dataType: 'json',
+      success: function (data) {
+        console.log(data)
+        $('#nama').val(data.nama)
+        $('#kode_guru').val(data.kode_guru)
+        $('#mapel').val(data.mapel)
+        $('#id').val(data.id)
+      }
+    })
+  })
+})
